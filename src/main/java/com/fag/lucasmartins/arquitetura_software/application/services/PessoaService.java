@@ -16,9 +16,7 @@ public class PessoaService implements PessoaServicePort {
 
     @Override
     public PessoaBO salvar(PessoaBO pessoaBO) {
-        // Validações já são feitas no construtor de PessoaBO
-        // Mas podemos chamar validar novamente se necessário
-        pessoaBO.validar();
+                pessoaBO.validar();
 
         return pessoaRepositoryPort.salvar(pessoaBO);
     }

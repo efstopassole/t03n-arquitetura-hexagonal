@@ -5,7 +5,7 @@ public class PessoaDTO {
     private String id;
     private String nomeCompleto;
     private String cpf;
-    private String dataNascimento; // As String for JSON
+    private String dataNascimento; 
     private String email;
     private String telefone;
 

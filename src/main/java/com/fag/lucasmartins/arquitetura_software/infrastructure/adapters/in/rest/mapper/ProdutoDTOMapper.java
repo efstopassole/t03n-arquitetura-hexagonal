@@ -22,6 +22,7 @@ public class ProdutoDTOMapper {
         dto.setNome(bo.getNome());
         dto.setPreco(bo.getPreco());
         dto.setEstoque(bo.getEstoque());
+        dto.setPrecoFinal(bo.getPrecoFinal());
 
         return dto;
     }

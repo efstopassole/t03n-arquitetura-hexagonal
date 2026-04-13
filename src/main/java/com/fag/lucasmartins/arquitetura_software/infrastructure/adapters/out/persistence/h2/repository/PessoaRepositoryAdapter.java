@@ -20,8 +20,9 @@ public class PessoaRepositoryAdapter implements PessoaRepositoryPort {
     public PessoaBO salvar(PessoaBO pessoaBO) {
         PessoaEntity pessoaEntity = PessoaMapper.toEntity(pessoaBO);
 
-        pessoaEntity = pessoaJpaRepository.save(pessoaEntity);
+        @SuppressWarnings("null")
+        PessoaEntity savedEntity = pessoaJpaRepository.save(pessoaEntity);
 
-        return PessoaMapper.toBO(pessoaEntity);
+        return PessoaMapper.toBO(savedEntity);
     }
 }
