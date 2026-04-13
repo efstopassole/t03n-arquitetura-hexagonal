@@ -8,6 +8,8 @@ public class ProdutoDTO {
 
     private double preco;
 
+    private double precoFinal;
+
     public String getNome() {
         return nome;
     }
@@ -30,6 +32,14 @@ public class ProdutoDTO {
 
     public void setPreco(double preco) {
         this.preco = preco;
+    }
+
+    public double getPrecoFinal() {
+        return precoFinal;
+    }
+
+    public void setPrecoFinal(double precoFinal) {
+        this.precoFinal = precoFinal;
     }
 
 }

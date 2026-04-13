@@ -20,8 +20,9 @@ public class ProdutoRepositoryAdapter implements ProdutoRepositoryPort {
     public ProdutoBO salvar(ProdutoBO produtoBO) {
         ProdutoEntity produtoEntity = ProdutoMapper.toEntity(produtoBO);
 
-        produtoJpaRepository.save(produtoEntity);
+        @SuppressWarnings("null")
+        ProdutoEntity savedEntity = produtoJpaRepository.save(produtoEntity);
 
-        return ProdutoMapper.toBO(produtoEntity);
+        return ProdutoMapper.toBO(savedEntity);
     }
 }
