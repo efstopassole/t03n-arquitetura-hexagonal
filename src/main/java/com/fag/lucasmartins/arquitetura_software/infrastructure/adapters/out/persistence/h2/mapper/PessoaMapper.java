@@ -1,4 +1,3 @@
-package com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.out.persistence.h2.mapper;
 
 import com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.out.persistence.h2.entity.PessoaEntity;
 import com.fag.lucasmartins.arquitetura_software.core.domain.bo.PessoaBO;
@@ -9,7 +8,19 @@ public class PessoaMapper {
     }
 
     public static PessoaEntity toEntity(PessoaBO pessoaBO) {
+        if (pessoaBO == null) {
+            return null;
+        }
         PessoaEntity pessoaEntity = new PessoaEntity();
+        pessoaEntity.setId(pessoaBO.getId());
+        pessoaEntity.setNomeCompleto(pessoaBO.getNomeCompleto());
+        pessoaEntity.setCpf(pessoaBO.getCpf());
+        pessoaEntity.setDataNascimento(pessoaBO.getDataNascimento());
+        pessoaEntity.setEmail(pessoaBO.getEmail());
+        pessoaEntity.setTelefone(pessoaBO.getTelefone());
+
+        return pessoaEntity;
+    } PessoaEntity pessoaEntity = new PessoaEntity();
         pessoaEntity.setId(pessoaBO.getId());
         pessoaEntity.setNomeCompleto(pessoaBO.getNomeCompleto());
         pessoaEntity.setCpf(pessoaBO.getCpf());
