@@ -2,7 +2,7 @@ package com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.res
 
 import com.fag.lucasmartins.arquitetura_software.application.ports.in.service.PedidoServicePort;
 import com.fag.lucasmartins.arquitetura_software.core.domain.bo.PedidoBO;
-import com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.rest.dto.PedidoDTO;
+import com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.messaging.Pedido.dto.PedidoDTO;
 import com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.rest.mapper.PedidoDTOMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

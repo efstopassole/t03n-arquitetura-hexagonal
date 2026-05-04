@@ -2,6 +2,8 @@ package com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.res
 
 public class ProdutoDTO {
 
+    private Integer id;
+
     private String nome;
 
     private Integer estoque;
@@ -9,6 +11,14 @@ public class ProdutoDTO {
     private double preco;
 
     private double precoFinal;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;

@@ -3,8 +3,8 @@ package com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.res
 import com.fag.lucasmartins.arquitetura_software.core.domain.bo.PedidoBO;
 import com.fag.lucasmartins.arquitetura_software.core.domain.bo.PedidoProdutoBO;
 import com.fag.lucasmartins.arquitetura_software.core.domain.bo.PessoaBO;
-import com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.rest.dto.PedidoDTO;
-import com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.rest.dto.PedidoProdutoDTO;
+import com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.messaging.Pedido.dto.PedidoDTO;
+import com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.messaging.Pedido.dto.PedidoProdutoDTO;
 import com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.rest.dto.PessoaDTO;
 
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public class PedidoDTOMapper {
         bo.setCep(dto.getCep());
         final List<PedidoProdutoBO> itens = new ArrayList<>();
         for (PedidoProdutoDTO itemDTO : dto.getItens()) {
-            final PedidoProdutoBO itemBO = PedidoItemDTOMapper.toBO(itemDTO);
+            final PedidoProdutoBO itemBO = PedidoItemDTOMapper.toBo(itemDTO);
             itens.add(itemBO);
         }
         bo.setItens(itens);
@@ -42,7 +42,7 @@ public class PedidoDTOMapper {
         dto.setValorTotal(bo.getValorTotal());
         final List<PedidoProdutoDTO> itensDTO = new ArrayList<>();
         for (PedidoProdutoBO itemBO : bo.getItens()) {
-            final PedidoProdutoDTO itemDTO = PedidoItemDTOMapper.toDTO(itemBO);
+            final PedidoProdutoDTO itemDTO = PedidoItemDTOMapper.toDto(itemBO);
             itensDTO.add(itemDTO);
         }
         dto.setItens(itensDTO);

@@ -1,62 +1,80 @@
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 package com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.out.persistence.h2.entity;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+import java.time.LocalDate;
+import java.util.UUID;
 
 @Entity
 @Table(name = "pessoa")
 public class PessoaEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(generator = "UUID")
+    private UUID id;
 
     @Column(nullable = false)
-    private String nome;
+    private String nomeCompleto;
 
     @Column(nullable = false)
-    private Integer idade;
+    private String cpf;
+
+    @Column(nullable = false)
+    private LocalDate dataNascimento;
 
     @Column(nullable = false, unique = true)
     private String email;
 
+    @Column(nullable = false)
+    private String telefone;
+
     public PessoaEntity() {
     }
 
-    public PessoaEntity(Long id, String nome, Integer idade, String email) {
+    public PessoaEntity(UUID id, String nomeCompleto, String cpf, LocalDate dataNascimento, String email, String telefone) {
         this.id = id;
-        this.nome = nome;
-        this.idade = idade;
+        this.nomeCompleto = nomeCompleto;
+        this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
         this.email = email;
+        this.telefone = telefone;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeCompleto() {
+        return nomeCompleto;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeCompleto(String nomeCompleto) {
+        this.nomeCompleto = nomeCompleto;
     }
 
-    public Integer getIdade() {
-        return idade;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setIdade(Integer idade) {
-        this.idade = idade;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
     public String getEmail() {
@@ -66,6 +84,12 @@ public class PessoaEntity {
     public void setEmail(String email) {
         this.email = email;
     }
-}public class PessoaEntity {
-    
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 }

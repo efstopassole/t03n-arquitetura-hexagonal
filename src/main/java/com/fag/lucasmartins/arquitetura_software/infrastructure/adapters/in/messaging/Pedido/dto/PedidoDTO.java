@@ -1,5 +1,6 @@
-package com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.rest.dto;
+package com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.messaging.Pedido.dto;
 
+import com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.rest.dto.PessoaDTO;
 import java.util.List;
 import java.util.UUID;
 

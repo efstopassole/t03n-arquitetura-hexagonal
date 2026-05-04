@@ -2,7 +2,7 @@ package com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.res
 
 import com.fag.lucasmartins.arquitetura_software.core.domain.bo.PedidoProdutoBO;
 import com.fag.lucasmartins.arquitetura_software.core.domain.bo.ProdutoBO;
-import com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.rest.dto.PedidoProdutoDTO;
+import com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.messaging.Pedido.dto.PedidoProdutoDTO;
 import com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.in.rest.dto.ProdutoDTO;
 
 public class PedidoItemDTOMapper {
@@ -10,7 +10,7 @@ public class PedidoItemDTOMapper {
     private PedidoItemDTOMapper() {
     }
 
-    public static PedidoProdutoBO toBO(PedidoProdutoDTO dto) {
+    public static PedidoProdutoBO toBo(PedidoProdutoDTO dto) {
         final PedidoProdutoBO bo = new PedidoProdutoBO();
         final ProdutoBO produtoBO = ProdutoDTOMapper.toBo(dto.getProduto());
 
@@ -21,7 +21,7 @@ public class PedidoItemDTOMapper {
         return bo;
     }
 
-    public static PedidoProdutoDTO toDTO(PedidoProdutoBO itemBO) {
+    public static PedidoProdutoDTO toDto(PedidoProdutoBO itemBO) {
         final PedidoProdutoDTO dto = new PedidoProdutoDTO();
         final ProdutoDTO produtoDTO = ProdutoDTOMapper.toDto(itemBO.getProduto());
 
